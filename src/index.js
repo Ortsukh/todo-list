@@ -1,9 +1,26 @@
-import './style.css';
-import ItemsListComponent from './items-list/items-list.js';
-import ItemsService from './model';
-ItemsService.addItems({ text: 'aasdas' });
-const list = ItemsListComponent.createList(ItemsService.getItems());
+import './css/style.css';
 
-document.getElementById('app').append(list);
+import {redactTodo, hidden} from './js/redact';
+import {listenDeleteTodo} from './js/remove';
+import {save, clear, loadTodo} from './js/save,load,clear';
+import {addNew} from './js/add';
+const spans = document.getElementsByClassName('todo-trash');
 
-// const style = require('./style.css');
+const input = document.querySelector("input[type='text']");
+const ul = document.querySelector('ul.todos');
+const red = document.getElementsByClassName('redact');
+// console.log(red);
+
+input.addEventListener('keypress', (keyPressed) => {
+  const keyEnter = 13;
+  if (keyPressed.which === keyEnter) {
+    addNew();
+  }
+});
+
+loadTodo();
+hidden(ul.children);
+listenDeleteTodo(spans);
+redactTodo(red);
+save();
+clear();

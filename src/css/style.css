@@ -1,0 +1,33 @@
+
+li {
+  list-style-type: none;
+ }
+.container {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.todos li {
+  width: 350px;
+  height: 30px;
+  background-color:grey;
+  margin: auto;
+  border: 1px solid white;
+  padding-top: 10px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 180px;
+}
+.todos input {
+  width: 300px;
+  font-size: 18px;
+  background-color:  rgb(85, 84, 84);
+}
+
+.hidden {
+  display:none;
+}
+#overlay {
+  text-align: center;
+}
